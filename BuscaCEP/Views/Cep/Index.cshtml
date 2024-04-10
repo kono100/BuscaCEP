@@ -19,3 +19,46 @@
 <div class="col-sm-7">
     <hr />
 </div>
+
+
+@if (Model != null)
+{
+
+    <div id="endereco">
+        <h5>Endereço encontrado</h5>
+        <p>
+            <label style="width:120px;">
+                <strong>Logradouro:</strong>
+            </label> @Model.Logradouro<br />
+
+            <label style="width:120px;">
+                <strong>Bairro:</strong>
+            </label> @Model.Bairro<br />
+
+            <label style="width:120px;">
+                <strong>Cidade / UF:</strong>
+            </label> @Model.Localidade / @Model.Uf
+        </p>
+    </div>
+
+}
+else
+{
+    <div id="mensagem">
+        <h3>
+            @Html.Raw(TempData["Mensagem"])<br />
+        </h3>
+    </div>
+}
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#form-cep").submit(function () {
+            // Exibir o icone de carregamento
+            $("#loader").show();
+            // Esconder o botão
+            $("#btnBuscar").replaceWith(loader);
+        };
+        };
+</script>
