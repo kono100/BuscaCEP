@@ -11,6 +11,7 @@
         <input type="submit" value="Buscar" id="btnBuscar" class="btn btn-primary btn-sm" style="margin-top:-3px;" />
         <span id="loader" style="display:none;">
             <img src="~/img/loading.gif" alt="Carregando..." class="img-fluid" style="width:30px;" />
+            <img src="~/img/" alt="Carregando..." class="img-fluid" style="width:30px;" />
         </span>
 
     </div>
@@ -56,10 +57,10 @@ else
 <script>
     $(document).ready(function () {
         $("#form-cep").submit(function () {
-            // Exibir o icone de carregamento
+            // Exibir o ícone de carregamento
             $("#loader").show();
             // Esconder o botão
             $("#btnBuscar").replaceWith(loader);
-        };
-        };
+        });
+    });
 </script>
