@@ -1,0 +1,21 @@
+﻿@model BuscaCEP.Models.Endereco
+
+<h2>Busca CEP</h2>
+
+<form id="form-cep" method="post" action="@Url.Action("BuscarEnderecoPorCep", "Cep")">
+    <div class="form-group row col-md-12">
+            <label asp-for="Cep" class="control-label col-md-10"></label>
+            
+
+        <input asp-for="Cep" class="form-control col-md-2" maxlength="8" required />
+        <input type="submit" value="Buscar" id="btnBuscar" class="btn btn-primary btn-sm" style="margin-top:-3px;" />
+        <span id="loader" style="display:none;">
+            <img src="~/img/loading.gif" alt="Carregando..." class="img-fluid" style="width:30px;" />
+        </span>
+
+    </div>
+</form>
+
+<div class="col-sm-7">
+    <hr />
+</div>
