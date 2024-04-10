@@ -1,7 +1,13 @@
+using BuscaCEP.Service;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// INJEÇÃO DE DEPENDÊNCIA E SINGLETON
+builder.Services.AddHttpClient();
+builder.Services.AddSingleton<CorreiosService>();
 
 var app = builder.Build();
 
