@@ -15,7 +15,7 @@ namespace BuscaCEP.Service
         {
             try
             {
-                var response = await _httpClient.GetAsync($"https://viacep.com.br/ws{cep}/json/");
+                var response = await _httpClient.GetAsync($"https://viacep.com.br/ws/{cep}/json/");
                 var json = await response.Content.ReadAsStringAsync();
                 if (json.Length > 20)
                     return JsonConvert.DeserializeObject<Endereco>(json);
